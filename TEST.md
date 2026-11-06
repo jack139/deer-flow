@@ -9,10 +9,19 @@ make docker-start
 
 # 使用国内源
 # APT_MIRROR="mirrors.aliyun.com"
-# UV_INDEX_URL="https://mirrors.aliyun.com/pypi/simple/"
+# UV_INDEX_URL="https://mirrors.aliyun.com/pypi/simple"
 # NPM_REGISTRY="https://registry.npmmirror.com"
 APT_MIRROR="mirrors.aliyun.com" \
     NPM_REGISTRY="https://registry.npmmirror.com" \
-    UV_INDEX_URL="https://mirrors.aliyun.com/pypi/simple/" \
+    UV_INDEX_URL="https://mirrors.aliyun.com/pypi/simple" \
     make docker-start
+
+
+#  🌐 Application: http://localhost:2026
+#  📡 API Gateway: http://localhost:2026/api/*
+#  🤖 Runtime:     Gateway embedded
+#  API:            /api/langgraph/* → Gateway
+#
+#  📋 View logs: make docker-logs
+#  🛑 Stop:      make docker-stop
 ```

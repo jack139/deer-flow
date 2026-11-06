@@ -71,6 +71,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
         esac; \
         extras_flags="$extras_flags --extra $extra"; \
     done; \
+    uv lock; \
     UV_INDEX_URL=${UV_INDEX_URL:-https://pypi.org/simple} uv sync --locked --extra redis $extras_flags'
 
 # UTF-8 locale prevents UnicodeEncodeError on Chinese/emoji content in minimal
